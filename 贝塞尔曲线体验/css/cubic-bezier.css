@@ -1,0 +1,44 @@
+.balls {
+    position: fixed;
+
+    margin-top: 50px;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+
+    background: linear-gradient(
+    35deg,
+    #cff,
+    #fcc
+    );
+
+    animation-name: bounce;
+    animation-duration: 2s;
+    animation-iteration-count: infinite;
+}
+
+#ball1 {
+    left: 27%;
+
+/* ubic-bezier(0.25, 0.25, 0.75, 0.75)等价于linear匀速 */
+
+    animation-timing-function: cubic-bezier(.25, .25, .75, .75);
+}
+
+#ball2 {
+    left: 56%;
+
+/* ease-out从高速向低速；ease-in从低速到高速 */
+
+    animation-timing-function: ease-out;
+}
+
+@keyframes bounce {
+    0% {
+        top: 0;
+    }
+
+    100% {
+        top: 249px;
+    }
+}
